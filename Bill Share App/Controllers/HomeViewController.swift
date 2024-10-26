@@ -7,16 +7,22 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var billTextField: UITextField!
     @IBOutlet weak var commisionSegmentedControl: UISegmentedControl!
     @IBOutlet weak var totalPersonLabel: UILabel!
+    @IBOutlet weak var originalBillLabel: UILabel!
+    @IBOutlet weak var totalTipsLabel: UILabel!
     @IBOutlet weak var totalBillLabel: UILabel!
+    @IBOutlet weak var perPersonBillLabel: UILabel!
     @IBOutlet weak var calculateButton: UIButton!
     @IBOutlet weak var personStepper: UIStepper!
+    
+    var bill: Double = 0.0
     var totalPerson: Int = 1
-    var commission: Double = 0.0
+    var tipPercentage: Double = 0.0
+    var totalTips: Double = 0.0
     var totalBill: Double = 0.0
     
     override func viewDidLoad() {
@@ -24,6 +30,8 @@ class HomeViewController: UIViewController {
         billTextField.becomeFirstResponder()
         totalPersonLabel.text = "Total Person: \(totalPerson)"
         totalBillLabel.isHidden = true
+        calculateButton.isHidden = true
+        billTextField.delegate = self
         navigationItem.title = "Bill Share App"
     }
     
@@ -42,23 +50,23 @@ class HomeViewController: UIViewController {
         let index = Int(commisionSegmentedControl.selectedSegmentIndex)
         switch index {
             case 0:
-                commission = 0.00
+                tipPercentage = 0.00
             case 1:
-                commission = 0.02
+                tipPercentage = 0.02
             case 2:
-                commission = 0.05
+                tipPercentage = 0.05
             case 3:
-                commission = 0.10
+                tipPercentage = 0.10
             case 4:
-                commission = 0.15
+                tipPercentage = 0.15
             case 5:
-                commission = 0.20
+                tipPercentage = 0.20
             case 6:
-                commission = 0.25
+                tipPercentage = 0.25
             default:
-                commission = 0.00
+                tipPercentage = 0.00
         }
-        print("\(commission)")
+        print("\(tipPercentage)")
         calculateBill()
     }
     
@@ -68,13 +76,24 @@ class HomeViewController: UIViewController {
     
     private func calculateBill() {
         guard billTextField.hasText else { return }
-        billTextField.resignFirstResponder()
-        let bill = Double(billTextField.text!) ?? 0
-        totalBill = (bill * commission) + bill
+        bill = Double(billTextField.text!) ?? 0
+        totalTips = (bill * tipPercentage)
+        totalBill = totalTips + bill
         totalBillLabel.isHidden = false
+        originalBillLabel.text = "Bill: $\(String(format: "%.2f", bill))"
+        totalTipsLabel.text = "Tips: $\(String(format: "%.2f", totalTips))"
+        totalBillLabel.text = "Total Bill: $\(String(format: "%.2f", totalBill))"
         let billPerPerson = totalBill / Double(totalPerson)
-        totalBillLabel.text = "Per Person: $\(String(format: "%.2f", billPerPerson))"
+        perPersonBillLabel.text = "Per Person: $\(String(format: "%.2f", billPerPerson))"
     }
     
+    @IBAction func billTextFieldChanged(_ sender: UITextField) {
+        calculateBill()
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        billTextField.becomeFirstResponder()
+        return true
+    }
 }
 
