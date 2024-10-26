@@ -16,8 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="51" translatesAutoresizingMaskIntoConstraints="NO" id="FCX-q7-M3g">
-                                <rect key="frame" x="10" y="103" width="373" height="580.66666666666663"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="FCX-q7-M3g">
+                                <rect key="frame" x="10" y="102.99999999999997" width="373" height="443.33333333333326"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Total Bill in Dollar" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UBJ-Re-pL6">
                                         <rect key="frame" x="0.0" y="0.0" width="373" height="34"/>
@@ -28,7 +28,7 @@
                                         </connections>
                                     </textField>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="bOQ-lV-SBU">
-                                        <rect key="frame" x="0.0" y="85" width="373" height="31"/>
+                                        <rect key="frame" x="0.0" y="74" width="373" height="31"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="RQa-xu-s1f"/>
                                         </constraints>
@@ -45,35 +45,25 @@
                                             <action selector="commisionSegmentedControlValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="O7X-lk-Mly"/>
                                         </connections>
                                     </segmentedControl>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Person" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sy8-wG-fdW">
-                                        <rect key="frame" x="0.0" y="166" width="373" height="20.333333333333343"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <stackView opaque="NO" contentMode="center" distribution="equalSpacing" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Bso-II-rrG">
-                                        <rect key="frame" x="0.0" y="237.33333333333331" width="373" height="32"/>
+                                        <rect key="frame" x="0.0" y="144" width="373" height="32"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="otn-Lc-gh7">
-                                                <rect key="frame" x="0.0" y="9" width="24" height="14"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain"/>
-                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Person" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sy8-wG-fdW">
+                                                <rect key="frame" x="0.0" y="5.9999999999999982" width="53" height="20.333333333333329"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <stepper opaque="NO" contentMode="center" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="x6R-GM-as9">
-                                                <rect key="frame" x="139.66666666666666" y="0.0" width="94" height="32"/>
+                                                <rect key="frame" x="279" y="0.0" width="94" height="32"/>
                                                 <connections>
                                                     <action selector="personStepperValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="mJX-vD-gbq"/>
                                                 </connections>
                                             </stepper>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zry-gK-uVx">
-                                                <rect key="frame" x="349" y="9" width="24" height="14"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain"/>
-                                            </button>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Vxf-G2-KuP">
-                                        <rect key="frame" x="0.0" y="320.33333333333331" width="373" height="20.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="216" width="373" height="20.333333333333343"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Original Bill" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MCn-cz-puT">
                                                 <rect key="frame" x="0.0" y="0.0" width="184" height="20.333333333333332"/>
@@ -90,19 +80,19 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Bill" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KsV-ST-gdm">
-                                        <rect key="frame" x="0.0" y="391.66666666666669" width="373" height="20.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="276.33333333333331" width="373" height="20.333333333333314"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aE0-fV-UZt">
-                                        <rect key="frame" x="0.0" y="463" width="373" height="26.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="336.66666666666669" width="373" height="26.333333333333314"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                         <color key="textColor" systemColor="systemRedColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w58-rM-Sxl">
-                                        <rect key="frame" x="0.0" y="540.33333333333337" width="373" height="40.333333333333371"/>
+                                        <rect key="frame" x="0.0" y="403" width="373" height="40.333333333333314"/>
                                         <color key="backgroundColor" systemColor="systemTealColor"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Calculate">

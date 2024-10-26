@@ -27,7 +27,6 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        billTextField.becomeFirstResponder()
         totalPersonLabel.text = "Total Person: \(totalPerson)"
         totalBillLabel.isHidden = true
         calculateButton.isHidden = true
@@ -40,7 +39,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         totalBillLabel.isHidden = true
         totalPerson = Int(personStepper.value)
         print(totalPerson)
-        totalPersonLabel.text = "Total Person: \(totalPerson)"
+        totalPersonLabel.text = "Total Peple = \(totalPerson)"
         calculateBill()
     }
     
@@ -80,11 +79,11 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         totalTips = (bill * tipPercentage)
         totalBill = totalTips + bill
         totalBillLabel.isHidden = false
-        originalBillLabel.text = "Bill: $\(String(format: "%.2f", bill))"
-        totalTipsLabel.text = "Tips: $\(String(format: "%.2f", totalTips))"
-        totalBillLabel.text = "Total Bill: $\(String(format: "%.2f", totalBill))"
+        originalBillLabel.text = "Bill = $\(String(format: "%.2f", bill))"
+        totalTipsLabel.text = "Total Tips = $\(String(format: "%.2f", totalTips))"
+        totalBillLabel.text = "Total Bill = $\(String(format: "%.2f", totalBill))"
         let billPerPerson = totalBill / Double(totalPerson)
-        perPersonBillLabel.text = "Per Person: $\(String(format: "%.2f", billPerPerson))"
+        perPersonBillLabel.text = "Bill Per Person = $\(String(format: "%.2f", billPerPerson))"
     }
     
     @IBAction func billTextFieldChanged(_ sender: UITextField) {
