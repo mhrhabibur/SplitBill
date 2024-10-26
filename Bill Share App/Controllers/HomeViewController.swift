@@ -27,11 +27,22 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        totalPersonLabel.text = "Total Person: \(totalPerson)"
+        totalPersonLabel.text = "Number of People = \(totalPerson)"
         totalBillLabel.isHidden = true
         calculateButton.isHidden = true
         billTextField.delegate = self
         navigationItem.title = "Bill Share App"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            image: UIImage(systemName: "square.and.arrow.up"),
+            style: .plain,
+            target: self,
+            action: #selector(shareBill)
+        )
+    }
+    
+    @objc func shareBill() {
+        let activityViewController = UIActivityViewController(activityItems: ["Check out today's bill"], applicationActivities: nil)
+        present(activityViewController, animated: true, completion: nil)
     }
     
     @IBAction func personStepperValueChanged(_ sender: Any) {
@@ -39,7 +50,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         totalBillLabel.isHidden = true
         totalPerson = Int(personStepper.value)
         print(totalPerson)
-        totalPersonLabel.text = "Total Peple = \(totalPerson)"
+        totalPersonLabel.text = "Number of People = \(totalPerson)"
         calculateBill()
     }
     
